@@ -1,0 +1,16 @@
+{
+  "name": "laser-js-lint",
+  "version": "1.0.0",
+  "description": "simple lint script that iterates over js files in a directory",
+  "main": "laserJSLint.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lars berg",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "glob": "^7.0.3",
+    "shelljs": "^0.7.0"
+  }
+}
