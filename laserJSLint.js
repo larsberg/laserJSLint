@@ -5,19 +5,17 @@
 
 var glob = require('glob');
 var colors = require('colors');
+var path = require('path');
 
 require('shelljs/global');
 
-var dir = process.argv[2];
 
-if (dir.charAt(dir.length - 1) !== '/') {
-  dir += '/';
-}
-
-if (!dir) {
+if (!process.argv[2]) {
   console.log(colors.red('pass a directory. example: node laserJSLint.js path/to/your/dir '));
   return;
 }
+
+var dir = path.normalize(process.argv[2] + '/');
 
 console.log(colors.cyan('\n\nlinting ' + dir));
 
