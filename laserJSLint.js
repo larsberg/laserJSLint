@@ -11,6 +11,7 @@ require('shelljs/global');
 var dir = process.argv[2];
 
 if (!dir) {
+  console.log( colors.red('pass a directory. example: node laserJSLint.js path/to/your/dir ') );
   return;
 }
 
