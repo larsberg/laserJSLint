@@ -10,10 +10,16 @@ require('shelljs/global');
 
 var dir = process.argv[2];
 
+if (dir.charAt(dir.length - 1) !== '/') {
+  dir += '/';
+}
+
 if (!dir) {
-  console.log( colors.red('pass a directory. example: node laserJSLint.js path/to/your/dir ') );
+  console.log(colors.red('pass a directory. example: node laserJSLint.js path/to/your/dir '));
   return;
 }
+
+console.log(colors.cyan('\n\nlinting ' + dir));
 
 
 glob(dir + '**/*.js', {
@@ -33,6 +39,8 @@ glob(dir + '**/*.js', {
     console.log(colors.yellow('\n' + file));
 
     exec('fixjsstyle --strict ' + file + ' && gjslint --strict ' + file);
+
+    // exec('jslint ' + file);
 
     console.log(colors.green(fileName + ' done\n'));
 

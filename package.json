@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "colors": "^1.1.2",
+    "gjslinter": "0.0.7",
+    "gjslinter-fixer": "0.0.3",
     "glob": "^7.0.3",
     "shelljs": "^0.7.0"
   }
